@@ -2,7 +2,7 @@ huePi
 =====
 
 Application for the Raspberry Pi to control the Philips Hue lights.
-
+[![Build Status](https://travis-ci.org/Tom-Davidson/huePi.svg)](https://travis-ci.org/Tom-Davidson/huePi)
 
 Notes
 =====
