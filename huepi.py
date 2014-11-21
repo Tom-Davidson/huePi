@@ -1,15 +1,6 @@
 import ConfigParser
 import requests
-
-def getLights(container):
-    # http://www.developers.meethue.com/documentation/lights-api#11_get_all_lights
-    r = requests.get(
-        'http://%s/api/%s/lights' % (
-            container['config'].get('hue', 'address'),
-            container['config'].get('hue', 'user')
-        )
-    )
-    return r.json()
+from hue.hue import Hue
 
 def main():
     Config = ConfigParser.ConfigParser()
@@ -17,7 +8,12 @@ def main():
     container = {
         'config': Config
     }
-    print getLights(container)
+    hue = Hue(container)
+    light = hue.getLightByName('Sitting room lamp')
+    #print light.setOn()
+    #print light.setOff()
+    print light.setBrightness(90)
+    print light.getState()
 
 if __name__ == '__main__':
     main()
