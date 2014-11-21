@@ -32,4 +32,8 @@ setup(
         'Topic :: Home Automation',
     ],
     test_suite='tests',
+    scripts=[
+        'huepi.py'
+        'prepHue.py'
+    ],
 )
